@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="formulario-editar-container"></div>
+
+<!-- Injecta los datos del usuario en JavaScript -->
+<script>
+    const datosUsuario = {
+        userName: "{{ user_name }}",  // Nombre del usuario
+        email: "{{ email }}"  // Correo electrónico del usuario
+    };
+</script>
+    
+    
+    
+    <script src="{{ url_for('static', filename='js/editar_perfil.js') }}"></script>
+{% endblock %}
+

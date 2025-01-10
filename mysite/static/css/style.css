@@ -1,0 +1,849 @@
+/*VARIABLES GLOBALES*/
+:root {
+    /*GENERAL*/
+    --navbar-color: #0066cc;  /* Valor por defecto */
+    --footer-color: #003366;  /* Valor por defecto */
+    /*INDEX*/
+    --aprende-color: #0066cc;  /* Valor por defecto */
+    --beneficio-color: #0066cc;/* Valor por defecto */
+    /*CURSOS*/
+    --titulocurso-color: #0066cc;/* Valor por defecto */
+    --botoncurso-color: #0066cc;/* Valor por defecto */
+    /*QUIENES SOMOS*/
+    --titulo-color: #0066cc;/* Valor por defecto */
+    --subtitulo-color: #0066cc;/* Valor por defecto */
+    /*LOGIN*/
+    --titulologin-color: #0066cc;/* Valor por defecto */
+    /*REGISTER*/
+    --tituloregistro-color: #0066cc;/* Valor por defecto */
+    /*DETALLE CURSO*/
+     --titulodetalle-color: #0066cc;/* Valor por defecto */
+    /* EDITAR PERFIL*/
+    --tituloeditar-color: #0066cc;/* Valor por defecto */
+}
+
+
+
+
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar actualizado */
+nav.navbar {
+    background: var(--navbar-color) !important; /* color moderno desde db */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #ffbc00;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    text-transform: capitalize;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+/* Botón "Mi Cuenta" */
+.navbar-nav .btn-custom {
+    background-color: #ffbc00;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .btn-custom:hover {
+    background-color: #ffaa00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón "Cerrar sesión" */
+.navbar-nav .btn-custom-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .btn-custom-secondary:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+    border-color: #ff4d4d;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+/* Navbar Toggler (Modo móvil) */
+.navbar-toggler {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    background-image: url('/static/img/ham-menu-icon.png'); /* Ajusta el camino de la imagen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+/* Responsividad del Navbar */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .navbar-nav .btn-custom, .navbar-nav .btn-custom-secondary {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--footer-color) !important; /*COLOR MODERNO DESDE DB*/
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer .redes img {
+    margin: 15px;
+    width: 60px;
+    transition: transform 0.3s ease;
+}
+
+footer .redes img:hover {
+    transform: scale(1.1);
+}
+
+/* Diseño Responsivo */
+.row-cols-1, .row-cols-sm-2, .row-cols-md-3, .row-cols-lg-4 {
+    display: grid;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-item {
+        margin: 5px 0;
+    }
+}
+
+/* Espaciado General */
+.container {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Sección Hero (Página Principal) */
+.hero {
+    background: var(--aprende-color) !important; /*COLOR MODERNO DESDE DB*/
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero .btn {
+    font-size: 1.1rem;
+}
+
+/* Beneficios (Página Principal) */
+.beneficios .container{
+    background: var(--beneficio-color) !important; /* color moderno desde db */
+    color: #fff;
+}
+.beneficios .icon {
+    color: #0066cc;
+}
+
+.beneficios h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Testimonios (Página Principal) */
+.testimonios blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.testimonios .card-body {
+    text-align: center;
+    padding: 40px;
+}
+
+.testimonios .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.testimonios .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonios .card-img-top {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonios h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+.testimonios blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+}
+
+.testimonios .blockquote-footer {
+    color: #fff;
+}
+
+/* Estilos de las Cards (Página de Cursos) */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.text-primary{
+    color: var(--titulocurso-color) !important; /*color moderno desde db*/
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #ddd;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h5 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.card-body p {
+    margin: 10px 0;
+    color: #666;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.card-body .btn {
+    margin-top: auto;
+    background-color: #3990e0;
+    color: white;
+    border: none;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card-body .btn:hover {
+    background-color: #48e43a;
+}
+
+/* Sección Quiénes Somos */
+.quienes-somos {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.quienes-somos h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--titulo-color) !important; /* color moderno desde db */
+    margin-bottom: 30px;
+}
+
+.quienes-somos .lead {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.quienes-somos .row {
+    margin-top: 40px;
+}
+
+.quienes-somos h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--subtitulo-color) !important; /* color moderno desde db */
+    margin-bottom: 15px;
+}
+
+.quienes-somos ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.quienes-somos ul li {
+    font-size: 1rem;
+    color: #666;
+}
+
+/*CURSOS*/
+.btn-primary{
+background: var(--botoncurso-color) !important; /* color moderno desde db */
+}
+.text-primary2{
+color: var(--titulocurso-color) !important; /* color moderno desde db */
+}
+
+/* Estilos de los Detalles del Curso */
+.curso-detalle-container {
+
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: transform 0.3s ease;
+}
+
+.curso-detalle-container h2 {
+    color: var(--titulodetalle-color) !important; /* color moderno desde db */
+}
+
+.curso-detalle-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-seccion {
+    font-size: 1.8em;
+    color: #3990e0;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nombre-curso {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.imagen-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img-curso {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.descripcion-curso {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.valor-container {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.valor-curso {
+    font-size: 1.3em;
+    color: #28a745 !important;
+    font-weight: 700;
+}
+
+.btn-adquirir {
+    margin-top: auto;
+    background-color:  var(--botoncurso-color) !important; /* color moderno desde db */;
+    color: white;
+    border: none;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-adquirir:hover {
+    background-color: #61cf4b;
+}
+
+/* Estilos generales para la sección Quiénes Somos */
+.quienes-somos {
+    background-color: #f8f9fa;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Títulos principales */
+.quienes-somos h2 {
+    font-size: 2.5rem;
+    color: #0066cc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.quienes-somos h3 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Tarjetas con misión y valores */
+.card {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card .text-muted {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Lista de valores con iconos */
+.list-unstyled li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.list-unstyled li i {
+    margin-right: 10px;
+}
+
+/* Imágenes */
+img.img-fluid {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+img.img-fluid:hover {
+    transform: scale(1.05);
+}
+
+/* Contenido adicional */
+.text-muted {
+    font-size: 1.1rem;
+}
+
+/* Ajustes en dispositivos pequeños */
+@media (max-width: 768px) {
+    .quienes-somos h2 {
+        font-size: 2rem;
+    }
+
+    .quienes-somos h3 {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* Estilo para el contenedor de los botones */
+.botones-container {
+    display: flex;  /* Usamos Flexbox para alinear los botones */
+    justify-content: space-between;  /* Alineamos los botones a los extremos */
+    margin-top: 20px;
+  }
+
+  /* Estilo para el botón "Regresar" (a la izquierda) */
+  .btn-regresar {
+    padding: 10px 20px;
+    background-color: #f49b36 !important; /* naranja */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+
+  .btn-regresar:hover {
+    background-color: #d32f2f; /* Rojo oscuro al pasar el mouse */
+  }
+
+  /* Estilo para el botón "Adquirir Curso" (centrado) */
+  .btn-adquirir {
+    padding: 10px 20px;
+    background-color: #438a22 !important; /* verde */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+
+  .btn-adquirir:hover {
+    background-color: #0bee31; /* Azul oscuro al pasar el mouse */
+  }
+
+  /* Estilos generales para el login */
+#login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+#login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+#login-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--titulologin-color) !important; /* color moderno desde db */;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Formulario */
+#login-form .form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#login-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#login-form .form-control:focus {
+    border-color: #3990e0;
+    box-shadow: 0 0 8px rgba(57, 144, 224, 0.3);
+    outline: none;
+}
+
+/* Botón de submit */
+#login-form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #3990e0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login-form .btn:hover {
+    background: #48e43a;
+    box-shadow: 0 6px 12px rgba(72, 228, 58, 0.4);
+}
+
+/* Enlace para registrarse */
+#login-container p {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+#login-container a {
+    color: #3990e0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#login-container a:hover {
+    color: #48e43a;
+}
+
+/* Estilos generales para el formulario de registro */
+#registro-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    background-color: #f9f9f9; /* Fondo gris suave */
+}
+
+#registro-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+#registro-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--tituloregistro-color) !important; /* color moderno desde db */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Estilos de los campos de formulario */
+#registro-container .form-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#registro-container .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+#registro-container .form-control:focus {
+    border-color: #3990e0;
+    box-shadow: 0 0 8px rgba(57, 144, 224, 0.3);
+    outline: none;
+}
+
+/* Botón de registrar */
+#registro-container .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #3990e0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#registro-container .btn-primary:hover {
+    background: #48e43a;
+    box-shadow: 0 6px 12px rgba(72, 228, 58, 0.4);
+}
+
+/* Enlace para iniciar sesión */
+#registro-container p {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+#registro-container a {
+    color: #3990e0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#registro-container a:hover {
+    color: #48e43a;
+}
+
+/* Estilos generales para el formulario de edición */
+#formulario-editar-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;  /* Fondo suave */
+}
+
+/* Título */
+#formulario-editar-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--tituloeditar-color) !important; /* color moderno desde db */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Estilos de los campos de formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Botón de "Guardar Cambios" */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    background-color: #004085;
+    transform: translateY(2px);
+}
+
+/* Mensaje de éxito/error */
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}

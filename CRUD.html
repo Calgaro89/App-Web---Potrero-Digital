@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    
+    <!-- Estilos CSS en el mismo archivo -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5a5a5a;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(60, 67, 129);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: rgb(229, 228, 231);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #courseList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #courseList li {
+            width: 18%;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #courseList li img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #courseList li button {
+            background-color: #e74c3c;
+            padding: 5px 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #courseList li button:hover {
+            background-color: #c0392b;
+        }
+
+        #courseList li .modifyButton {
+            background-color: #3498db;
+        }
+
+        #courseList li .modifyButton:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Cursos</h1>
+
+        <!-- Formulario para agregar o modificar un curso -->
+        <form id="courseForm">
+            <input type="text" id="nombrecurso" placeholder="Nombre del curso" required>
+            <input type="text" id="descripcion" placeholder="Descripción del curso" required>
+            <input type="text" id="duracion" placeholder="Duración del curso" required>
+            <input type="text" id="imagen" placeholder="URL de la imagen" required>
+            <input type="number" id="valor" placeholder="Valor del curso" required>
+            <!-- Nuevo campo de dificultad -->
+            <select id="dificultad" required>
+                <option value="">Selecciona el nivel de dificultad</option>
+                <option value="Principiante">Principiante</option>
+                <option value="Medio">Medio</option>
+                <option value="Experto">Experto</option>
+            </select>
+            <button type="submit">Agregar Curso</button>
+        </form>
+
+        <h2>Lista de Cursos</h2>
+        <ul id="courseList">
+            <!-- Los cursos se cargarán aquí -->
+        </ul>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getDatabase, ref, set, get, child, push, remove, update } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCE2rkS59pvt6Gjr2USdOpmIsFdC7XYWFc",
+            authDomain: "cristiancalgaro-b233f.firebaseapp.com",
+            databaseURL: "https://cristiancalgaro-b233f-default-rtdb.firebaseio.com",
+            projectId: "cristiancalgaro-b233f",
+            storageBucket: "cristiancalgaro-b233f.firebasestorage.app",
+            messagingSenderId: "147069576552",
+            appId: "1:147069576552:web:edecfd13cb1b1d6cb8a2dd"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const dbRef = ref(db, 'cursos');
+
+        let editingCourseId = null;
+
+        // Función para cargar los cursos desde Firebase
+        function loadCourses() {
+    get(dbRef).then((snapshot) => {
+        const courseList = document.getElementById("courseList");
+        if (snapshot.exists()) {
+            const courses = snapshot.val();
+            courseList.innerHTML = ''; // Limpiar lista existente
+            for (let id in courses) {
+                const course = courses[id];
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <img src="${course.imagen}" alt="${course.nombrecurso}" width="100">
+                    <h3>${course.nombrecurso}</h3>
+                    
+                    <p>Duración: ${course.duracion}</p>
+                    <p>Valor: $${course.valor}</p>
+                    <p><strong>Dificultad:</strong> ${course.dificultad}</p> <!-- Mostrar la dificultad -->
+                    <button class="modifyButton">Modificar</button>
+                    <button class="deleteButton">Eliminar</button>
+                `;
+                courseList.appendChild(li);
+
+                // Agregar el evento de modificación
+                li.querySelector(".modifyButton").addEventListener("click", function() {
+                    editCourse(id);
+                });
+
+                // Agregar evento de eliminación
+                li.querySelector(".deleteButton").addEventListener("click", function() {
+                    deleteCourse(id);
+                });
+            }
+        } else {
+            courseList.innerHTML = '<p>No hay cursos disponibles.</p>';
+        }
+    }).catch((error) => {
+        console.error("Error al cargar los cursos:", error);
+    });
+}
+
+// Crear o actualizar un curso
+document.getElementById("courseForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombrecurso = document.getElementById("nombrecurso").value;
+    const descripcion = document.getElementById("descripcion").value;
+    const duracion = document.getElementById("duracion").value;
+    const valor = document.getElementById("valor").value;
+    const imagen = document.getElementById("imagen").value;
+    const dificultad = document.getElementById("dificultad").value;  // Obtener el valor de la dificultad
+
+    const newCourse = {
+        nombrecurso,
+        descripcion,
+        duracion,
+        valor,
+        imagen,
+        dificultad  // Añadir la dificultad al objeto del curso
+    };
+
+    if (editingCourseId) {
+        // Si estamos editando un curso existente, lo actualizamos
+        update(child(dbRef, editingCourseId), newCourse).then(() => {
+            loadCourses();  // Recargar la lista de cursos
+            document.getElementById("courseForm").reset();  // Limpiar el formulario
+            editingCourseId = null;  // Limpiar el ID de edición
+            document.querySelector("button[type='submit']").textContent = "Agregar Curso";  // Restablecer el texto del botón
+        }).catch((error) => {
+            console.error("Error al actualizar curso:", error);
+        });
+    } else {
+        // Si no estamos editando, creamos un nuevo curso
+        push(dbRef, newCourse).then(() => {
+            loadCourses();  // Recargar la lista de cursos
+            document.getElementById("courseForm").reset();  // Limpiar el formulario
+        }).catch((error) => {
+            console.error("Error al agregar curso:", error);
+        });
+    }
+});
+
+        // Eliminar un curso
+        function deleteCourse(id) {
+            console.log("Eliminando curso con ID:", id);  // Verifica que el ID es el correcto
+            remove(child(dbRef, id)).then(() => {
+                loadCourses();  // Recargar la lista de cursos
+                console.log("Curso eliminado correctamente");
+            }).catch((error) => {
+                console.error("Error al eliminar curso:", error);
+            });
+        }
+
+        // Editar un curso
+        function editCourse(id) {
+            get(child(dbRef, id)).then((snapshot) => {
+                const course = snapshot.val();
+                // Cargar los datos del curso en el formulario para editar
+                document.getElementById("nombrecurso").value = course.nombrecurso;
+                document.getElementById("descripcion").value = course.descripcion;
+                document.getElementById("duracion").value = course.duracion;
+                document.getElementById("valor").value = course.valor;
+                document.getElementById("imagen").value = course.imagen;
+                editingCourseId = id;  // Guardar el ID del curso que estamos editando
+                document.querySelector("button[type='submit']").textContent = "Actualizar Curso";  // Cambiar el texto del botón
+            }).catch((error) => {
+                console.error("Error al obtener curso:", error);
+            });
+        }
+
+        // Cargar los cursos al cargar la página
+        loadCourses();
+    </script>
+</body>
+</html>

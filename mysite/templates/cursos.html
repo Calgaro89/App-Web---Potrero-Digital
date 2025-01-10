@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1 class="text-center mb-5 text-primary2 font-weight-bold">Lista de Cursos</h1>
+
+    <div id="card-deck" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"></div> <!-- Establecer un diseño responsivo -->
+
+    <script src="{{ url_for('static', filename='js/cursos.js') }}"></script>
+{% endblock %}

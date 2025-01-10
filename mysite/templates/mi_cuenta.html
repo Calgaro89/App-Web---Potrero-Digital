@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Mi Cuenta - CursoWeb{% endblock %}
+
+{% block content %}
+<div class="container mt-5" id="mi-cuenta-container">
+    <h2 id="user-name"></h2>
+    <!-- El contenido será inyectado aquí -->
+</div>
+
+<!-- Pasar los datos del usuario y cursos adquiridos a JS -->
+<script>
+    const datosUsuario = {
+        userName: "{{ user_name }}",  // Nombre del usuario pasado desde Flask
+        mensajesFlash: [{ tipo: "success", mensaje: "Bienvenido de nuevo." }],
+        cursos: {{ courses | tojson }}  // Cursos adquiridos en formato JSON
+    };
+
+    console.log(datosUsuario);  // Verifica los datos en la consola
+</script>
+
+
+<script src="{{ url_for('static', filename='js/mi_cuenta.js') }}"></script>
+{% endblock %}

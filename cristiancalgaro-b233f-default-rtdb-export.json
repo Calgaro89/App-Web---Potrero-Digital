@@ -1,0 +1,98 @@
+{
+  "cursos": {
+    "-NyleJ45H1k6MN-RHpLP": {
+      "descripcion": "Aprende Java desde cero con este curso interactivo y práctico. Domina los fundamentos de la programación orientada a objetos, estructuras de datos y algoritmos, y desarrolla tus propias aplicaciones. Ideal tanto para principiantes como para quienes desean profundizar en este lenguaje versátil y ampliamente utilizado en el desarrollo de software.",
+      "dificultad": "Experto",
+      "duracion": "190",
+      "imagen": "https://th.bing.com/th/id/R.37131f2ce50bb1966027016a0c410932?rik=HW0nbYnUQGL1Yw&pid=ImgRaw&r=0",
+      "nombrecurso": "JAVA",
+      "valor": "250000"
+    },
+    "-NypdldaKkuVxPU1loCr": {
+      "descripcion": "Domina JavaScript con este curso práctico y accesible. Aprende a crear sitios web interactivos, gestionar eventos, trabajar con APIs y más. Ideal para principiantes que desean adentrarse en el desarrollo web y mejorar sus habilidades en uno de los lenguajes más populares para la creación de aplicaciones dinámicas.",
+      "dificultad": "Principiante",
+      "duracion": "120",
+      "imagen": "https://th.bing.com/th/id/OIP.RKDSdMJ5v5Hb4uflD3AoZgHaD5?rs=1&pid=ImgDetMain",
+      "nombrecurso": "JavaScript",
+      "valor": "150000"
+    },
+    "-NyqvA7DnjU_6vY0Eq8P": {
+      "descripcion": "Aprende PHP con este curso práctico y completo. Descubre cómo desarrollar aplicaciones web dinámicas, gestionar bases de datos y crear sitios interactivos. Perfecto para quienes desean iniciarse en el desarrollo web y mejorar sus habilidades en uno de los lenguajes más utilizados en la programación de back-end.",
+      "dificultad": "Principiante",
+      "duracion": "80",
+      "imagen": "https://i1.wp.com/itsoftware.com.co/content/wp-content/uploads/2017/02/php1.jpg?resize=296%2C170&ssl=1",
+      "nombrecurso": "PHP",
+      "valor": "140000"
+    },
+    "-OB2XbrjlTCidLt7WZ97": {
+      "descripcion": "Descubre Python, uno de los lenguajes de programación más versátiles y populares. Este curso te enseñará desde lo básico hasta conceptos avanzados, permitiéndote desarrollar aplicaciones, automatizar tareas y trabajar con datos. Ideal para principiantes y quienes buscan expandir sus conocimientos en desarrollo y análisis de datos.",
+      "dificultad": "Principiante",
+      "duracion": "70",
+      "imagen": "https://th.bing.com/th/id/OIP.ko4oRgINZ_h0xn9Jgea1vAHaEG?rs=1&pid=ImgDetMain",
+      "nombrecurso": "Python",
+      "valor": "450000"
+    },
+    "-OCBD2-cOtffokX2Z05p": {
+      "descripcion": "Aprende Angular, el potente framework de JavaScript para crear aplicaciones web dinámicas y escalables. En este curso, dominarás la estructura de componentes, el manejo de rutas, servicios y formularios, y aprenderás a desarrollar interfaces modernas y eficientes. Ideal para quienes desean especializarse en el desarrollo de aplicaciones frontend con Angular.",
+      "dificultad": "Medio",
+      "duracion": "125",
+      "imagen": "https://www.dongee.com/tutoriales/content/images/2023/01/image-32.png",
+      "nombrecurso": "Angular",
+      "valor": "475000"
+    },
+    "-OCJTm7N9TdSbU1rJgty": {
+      "descripcion": "En este curso, aprenderás los fundamentos de Amazon Web Services (AWS), la plataforma de servicios en la nube más popular y utilizada en el mundo. Desde el aprovisionamiento de recursos hasta la gestión de infraestructura, explorarás servicios clave como EC2, S3, RDS y Lambda. Este curso está diseñado para principiantes que deseen adquirir las habilidades necesarias para crear, administrar y escalar aplicaciones en la nube de manera eficiente. A lo largo del curso, también cubrirás buenas prácticas de seguridad, costos y optimización, preparándote para empezar a trabajar con AWS en entornos reales.",
+      "dificultad": "Experto",
+      "duracion": "125",
+      "imagen": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+      "nombrecurso": "AWS",
+      "valor": "540000"
+    },
+    "-OCJU9cShHLs7khQKu1b": {
+      "descripcion": "Este curso te introducirá en Salesforce, la plataforma líder de gestión de relaciones con clientes (CRM) en la nube. Aprenderás cómo utilizar las herramientas de Salesforce para gestionar datos de clientes, automatizar procesos de ventas y marketing, y optimizar la atención al cliente. A lo largo del curso, explorarás funcionalidades clave como Sales Cloud, Service Cloud, y Marketing Cloud, además de cómo personalizar la plataforma según las necesidades de tu negocio. Ideal para principiantes, este curso te proporcionará los conocimientos esenciales para sacar el máximo provecho de Salesforce y mejorar la productividad y eficiencia en la gestión de relaciones con tus clientes.",
+      "dificultad": "Experto",
+      "duracion": "230",
+      "imagen": "https://martech.org/wp-content/uploads/2015/06/salesforce-logo-1920.jpg",
+      "nombrecurso": "Salesforce",
+      "valor": "700000"
+    },
+    "-OCJUdKHuWIPhZkdlRiE": {
+      "descripcion": "En este curso, aprenderás a desarrollar aplicaciones backend utilizando Node.js, el entorno de ejecución de JavaScript que permite crear aplicaciones escalables y rápidas. Comenzarás explorando los fundamentos de Node.js, como su arquitectura basada en eventos y su sistema de gestión de paquetes npm. A lo largo del curso, aprenderás a construir APIs RESTful, interactuar con bases de datos, manejar autenticación y seguridad, y trabajar con frameworks como Express.js para simplificar el desarrollo. Este curso es ideal para desarrolladores que desean expandir sus conocimientos en JavaScript y adentrarse en el mundo del desarrollo backend.",
+      "dificultad": "Medio",
+      "duracion": "190",
+      "imagen": "https://th.bing.com/th/id/OIP.Zg5-YmYNdOFQ4TIJEqHwbwAAAA?rs=1&pid=ImgDetMain",
+      "nombrecurso": "Node.JS",
+      "valor": "370000"
+    }
+  },
+  "styles": {
+    "aprende_color": "#3782e6",
+    "beneficio_color": "#3782e6",
+    "botoncurso_color": "#3782e6",
+    "footer_color": "#3782e6",
+    "navbar_color": "#3782e6",
+    "subtitulo_color": "#3782e6",
+    "titulo_color": "#3782e6",
+    "titulocurso_color": "#3782e6",
+    "titulodetalle_color": "#3782e6",
+    "tituloeditar_color": "#3782e6",
+    "titulologin_color": "#3782e6",
+    "tituloregistro_color": "#3782e6"
+  },
+  "user_courses": {
+    "-OC_45YdId0ErB2d0QdQ": {
+      "courses": {
+        "-NyleJ45H1k6MN-RHpLP": true,
+        "-NypdldaKkuVxPU1loCr": true,
+        "-OCJU9cShHLs7khQKu1b": true
+      }
+    }
+  },
+  "users": {
+    "-OC_45YdId0ErB2d0QdQ": {
+      "email": "cristiancalgaro@gmail.com",
+      "nombre": "Cristian Calgaro",
+      "password": "scrypt:32768:8:1$Gmz9Kv5tx8TYb16j$805d07b2084281c7e200272ca4eb224b7c4c79fb22ea91d13ec7103797459b29eeb80fadba89aa71451b8ca45a6686f71e9551802ede5378e4289f98e41a7eec"
+    }
+  }
+}

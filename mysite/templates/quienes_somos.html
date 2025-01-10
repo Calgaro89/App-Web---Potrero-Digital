@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}Quiénes Somos - CursoWeb{% endblock %}
+
+{% block content %}
+
+<div id="dynamic-content"></div>
+
+<script src="{{ url_for('static', filename='js/quienes_somos.js') }}"></script>
+{% endblock %}

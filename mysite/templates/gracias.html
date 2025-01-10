@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<style>
+/* Aseguramos que el body ocupa todo el alto de la pantalla */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Contenedor de la sección de agradecimiento */
+.thank-you-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: auto;  /* Alineación horizontal centrada */
+    flex-grow: 1;  /* Permite que el contenedor crezca para ocupar espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical dentro del contenedor */
+}
+
+/* Estilos para el título y el mensaje */
+.thank-you-container h1 {
+    font-size: 2.5rem;
+    color: #28a745;
+}
+
+.thank-you-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Botón de acción */
+.btn {
+    background-color: #3990e0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #48e43a;
+}
+
+/* Asegurar que el footer se mantiene al final */
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;  /* Asegura que el footer siempre quede abajo */
+}
+</style>
+
+<div class="thank-you-container">
+    <h1>¡Gracias por Adquirir el Curso!</h1>
+    <p>Tu compra ha sido procesada correctamente. Te redirigiremos a la página principal en breve.</p>
+    <p>¡Prepárate para empezar a aprender!</p>
+    <a href="/" class="btn">Volver al Inicio</a>
+</div>
+
+<script>
+// Redirigir automáticamente después de 5 segundos
+setTimeout(function() {
+    window.location.href = '/mi_cuenta';  // Redirige a la página principal
+}, 5000);  // 5000 milisegundos = 5 segundos
+</script>
+
+
+{% endblock %}

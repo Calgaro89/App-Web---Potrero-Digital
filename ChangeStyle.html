@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Estilos del Sitio</title>
+    <style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Sección y estilo de formularios */
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        input[type="color"] {
+            width: 50px;
+            height: 35px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo del botón */
+        button {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mensajes de éxito y error */
+        #status {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .success {
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Actualizar Estilos del Sitio</h1>
+        <form id="stylesForm">
+            <!-- Sección Navbar y Footer -->
+            <div class="section">
+                <h2>Estilos del Navbar y Footer</h2>
+                <div class="form-group">
+                    <label for="navbar_color">Color Navbar:</label>
+                    <input type="color" id="navbar_color" name="navbar_color" value="#0066cc">
+                </div>
+
+                <div class="form-group">
+                    <label for="footer_color">Color Footer:</label>
+                    <input type="color" id="footer_color" name="footer_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Index -->
+            <div class="section">
+                <h2>Sección Index</h2>
+                <div class="form-group">
+                    <label for="beneficio_color">Color Beneficios:</label>
+                    <input type="color" id="beneficio_color" name="beneficio_color" value="#3990e0">
+                </div>
+
+                <div class="form-group">
+                    <label for="aprende_color">Color Aprende:</label>
+                    <input type="color" id="aprende_color" name="aprende_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Quiénes Somos -->
+            <div class="section">
+                <h2>Sección Quiénes Somos</h2>
+                <div class="form-group">
+                    <label for="titulo_color">Color Título:</label>
+                    <input type="color" id="titulo_color" name="titulo_color" value="#3990e0">
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitulo_color">Color Subtítulo:</label>
+                    <input type="color" id="subtitulo_color" name="subtitulo_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Cursos -->
+            <div class="section">
+                <h2>Sección Cursos</h2>
+                <div class="form-group">
+                    <label for="titulocurso_color">Color Título:</label>
+                    <input type="color" id="titulocurso_color" name="titulocurso_color" value="#3990e0">
+                </div>
+
+                <div class="form-group">
+                    <label for="botoncurso_color">Color Botón:</label>
+                    <input type="color" id="botoncurso_color" name="botoncurso_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Login -->
+            <div class="section">
+                <h2>Sección Login</h2>
+                <div class="form-group">
+                    <label for="titulologin_color">Color Título:</label>
+                    <input type="color" id="titulologin_color" name="titulologin_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Registro -->
+            <div class="section">
+                <h2>Sección Registro</h2>
+                <div class="form-group">
+                    <label for="tituloregistro_color">Color Título:</label>
+                    <input type="color" id="tituloregistro_color" name="tituloregistro_color" value="#3990e0">
+                </div>
+            </div>
+
+            <!-- Sección Detalles -->
+            <div class="section">
+                <h2>Sección Detalle Curso</h2>
+                <div class="form-group">
+                    <label for="titulodetalle_color">Color Título:</label>
+                    <input type="color" id="titulodetalle_color" name="titulodetalle_color" value="#3990e0">
+                </div>
+            </div>
+
+           <!-- Sección Editar Perfil -->
+            <div class="section">
+                    <h2>Sección Editar Perfil</h2>
+                    <div class="form-group">
+                 <label for="tituloeditar_color">Color Título:</label>
+                 <input type="color" id="tituloeditar_color" name="tituloeditar_color" value="#3990e0">
+            </div>
+            </div>
+
+            <button type="submit">Actualizar Estilos</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Importar las funciones de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCE2rkS59pvt6Gjr2USdOpmIsFdC7XYWFc",
+            authDomain: "cristiancalgaro-b233f.firebaseapp.com",
+            databaseURL: "https://cristiancalgaro-b233f-default-rtdb.firebaseio.com",
+            projectId: "cristiancalgaro-b233f",
+            storageBucket: "cristiancalgaro-b233f.firebasestorage.app",
+            messagingSenderId: "147069576552",
+            appId: "1:147069576552:web:edecfd13cb1b1d6cb8a2dd"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Obtener los datos de la base de datos
+        function loadStyles() {
+            const stylesRef = ref(db, 'styles');
+            get(stylesRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const styles = snapshot.val();
+                    document.getElementById('navbar_color').value = styles.navbar_color || '#0066cc';
+                    document.getElementById('footer_color').value = styles.footer_color || '#3990e0';
+                    document.getElementById('beneficio_color').value = styles.beneficio_color || '#3990e0';
+                    document.getElementById('aprende_color').value = styles.aprende_color || '#3990e0';
+                    document.getElementById('titulo_color').value = styles.titulo_color || '#3990e0';
+                    document.getElementById('subtitulo_color').value = styles.subtitulo_color || '#3990e0';
+                    document.getElementById('titulocurso_color').value = styles.titulocurso_color || '#3990e0';
+                    document.getElementById('botoncurso_color').value = styles.botoncurso_color || '#3990e0';
+                    document.getElementById('titulologin_color').value = styles.titulologin_color || '#3990e0';
+                    document.getElementById('tituloregistro_color').value = styles.tituloregistro_color || '#3990e0';
+                    document.getElementById('titulodetalle_color').value = styles.titulodetalle_color || '#3990e0';
+                    document.getElementById('tituloeditar_color').value = styles.tituloeditar_color || '#3990e0';
+                }
+            }).catch((error) => {
+                console.error("Error al cargar los estilos:", error);
+            });
+        }
+
+        loadStyles(); // Cargar los estilos de la base de datos
+
+        // Obtener el formulario y añadir evento de envío
+        document.getElementById('stylesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Obtener los valores de los colores
+            const navbarColor = document.getElementById('navbar_color').value;
+            const footerColor = document.getElementById('footer_color').value;
+            const aprendeColor = document.getElementById('aprende_color').value;
+            const beneficioColor = document.getElementById('beneficio_color').value;
+            const tituloColor = document.getElementById('titulo_color').value;
+            const subtituloColor = document.getElementById('subtitulo_color').value;
+            const titulocursoColor = document.getElementById('titulocurso_color').value;
+            const botoncursoColor = document.getElementById('botoncurso_color').value;
+            const titulologinColor = document.getElementById('titulologin_color').value;
+            const tituloregistroColor = document.getElementById('tituloregistro_color').value;
+            const titulodetalleColor = document.getElementById('titulodetalle_color').value;
+            const tituloeditarColor = document.getElementById('tituloeditar_color').value;
+
+            // Referencia a la ubicación en la base de datos Firebase
+            const stylesRef = ref(db, 'styles');
+
+            // Actualizar los valores en Firebase
+            set(stylesRef, {
+                navbar_color: navbarColor,
+                footer_color: footerColor,
+                aprende_color: aprendeColor,
+                beneficio_color: beneficioColor,
+                titulo_color: tituloColor,
+                subtitulo_color: subtituloColor,
+                titulocurso_color: titulocursoColor,
+                botoncurso_color: botoncursoColor,
+                titulologin_color: titulologinColor,
+                tituloregistro_color: tituloregistroColor,
+                titulodetalle_color: titulodetalleColor,
+                tituloeditar_color: tituloeditarColor
+            })
+            .then(() => {
+                document.getElementById('status').textContent = 'Estilos actualizados correctamente';
+                document.getElementById('status').className = 'success';
+            })
+            .catch((error) => {
+                document.getElementById('status').textContent = 'Error al actualizar los estilos: ' + error.message;
+                document.getElementById('status').className = 'error';
+            });
+        });
+    </script>
+</body>
+</html>

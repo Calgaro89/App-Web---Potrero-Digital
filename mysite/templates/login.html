@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block content %}
+    <div class="container mt-5" id="login-container">
+        <!-- El contenido será inyectado aquí a través de JS -->
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
