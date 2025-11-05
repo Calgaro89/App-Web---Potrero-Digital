@@ -11,16 +11,44 @@ firebase-admin==6.6.0
 Flask==3.0.3
 Flask-Bcrypt==1.0.1
 Flask-Login==0.6.3
-google-api-core==2.23.0
-google-api-python-client==2.154.0
+18:06:45.247 
+Running build in Washington, D.C., USA (East) – iad1
+18:06:45.248 
+Build machine configuration: 2 cores, 8 GB
+18:06:45.258 
+Cloning github.com/Calgaro89/App-Web---Potrero-Digital (Branch: main, Commit: b956d86)
+18:06:45.259 
+Skipping build cache, deployment was triggered without cache.
+18:06:48.622 
+Cloning completed: 3.364s
+18:06:50.007 
+Running "vercel build"
+18:06:50.955 
+Vercel CLI 48.8.2
+18:06:51.327 
+WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+18:06:52.432 
+No Python version specified in pyproject.toml or Pipfile.lock. Using latest installed version: 3.12
+18:06:52.879 
+Installing required dependencies from requirements.txt...
+18:06:52.880 
+Using uv at "/usr/local/bin/uv"
+18:06:56.088 
+Build Completed in /vercel/output [5s]
+18:06:56.439 
+Deploying outputs...
+18:07:13.001 
+Error: A Serverless Function has exceeded the unzipped maximum size of 250 MB. : https://vercel.link/serverless-function-size
+# google-api-core==2.23.0
+# google-api-python-client==2.154.0
 google-auth==2.36.0
-google-auth-httplib2==0.2.0
-google-cloud-core==2.4.1
+# google-auth-httplib2==0.2.0
+# google-cloud-core==2.4.1
 # google-cloud-firestore==2.19.0 <-- COMENTADA
 # google-cloud-storage==2.18.2 <-- COMENTADA
 google-crc32c==1.5.0
-google-resumable-media==2.7.2
-googleapis-common-protos==1.66.0
+# google-resumable-media==2.7.2
+# googleapis-common-protos==1.66.0
 grpcio==1.68.0
 grpcio-status==1.68.0
 httplib2==0.22.0
@@ -44,5 +72,6 @@ rsa==4.9
 urllib3==2.2.3
 Werkzeug==3.0.4
 zipp==3.20.2
+
 
 
