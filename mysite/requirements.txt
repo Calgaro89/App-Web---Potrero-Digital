@@ -16,8 +16,8 @@ google-api-python-client==2.154.0
 google-auth==2.36.0
 google-auth-httplib2==0.2.0
 google-cloud-core==2.4.1
-google-cloud-firestore==2.19.0
-google-cloud-storage==2.18.2
+# google-cloud-firestore==2.19.0 <-- COMENTADA
+# google-cloud-storage==2.18.2 <-- COMENTADA
 google-crc32c==1.5.0
 google-resumable-media==2.7.2
 googleapis-common-protos==1.66.0
@@ -44,4 +44,5 @@ rsa==4.9
 urllib3==2.2.3
 Werkzeug==3.0.4
 zipp==3.20.2
+
 
